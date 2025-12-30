@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adnan Bashir - Profile</title>
-    <style>
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --accent: #3b82f6;
-            --accent-hover: #2563eb;
-            --btn-bg: #2d2d2d;
-            --btn-border: #404040;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adnan Bashir</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta name="description" content="Adnan Bashir – PhD Researcher and Machine Learning Engineer working on network measurement, digital rights, and unsupervised systems." />
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <style>
+    :root {
+      --bg: #0b0b0f;
+      --card: #13131a;
+      --text: #f5f5f7;
+      --muted: #a1a1aa;
+      --accent: #60a5fa;
+      --border: #262626;
+      --glow: rgba(96, 165, 250, 0.35);
+    }
 
-        /* Container for the single profile card */
-        .container {
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #333;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(800px circle at top, #111827 0%, transparent 40%),
+        var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      padding: 24px;
+    }
 
-        .profile-img:hover {
-            transform: scale(1.05);
-        }
+    .card {
+      max-width: 420px;
+      width: 100%;
+      background: linear-gradient(180deg, #15151f, var(--card));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 42px 36px;
+      text-align: center;
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.7),
+        inset 0 1px 0 rgba(255,255,255,.03);
+      animation: fadeIn .6s ease-out;
+    }
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-        h2 {
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 6px rgba(96,165,250,.12);
+      margin-bottom: 22px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
 
-        p {
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 30px;
-            font-size: 0.95rem;
-        }
+    .avatar:hover {
+      transform: scale(1.04);
+      box-shadow: 0 0 28px var(--glow);
+    }
 
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
 
-        .btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 14px;
-            background-color: var(--btn-bg);
-            color: var(--text-main);
-            text-decoration: none;
-            border-radius: 10px;
-            transition: all 0.2s ease;
-            font-weight: 500;
-            border: 1px solid var(--btn-border);
-            font-size: 1rem;
-        }
+    h2 {
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 22px;
+    }
 
-        .btn:hover {
-            background-color: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
+    p {
+      font-size: .96rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
 
-        /* Specific style for GPG key to differentiate it slightly */
-        .btn-gpg {
-            font-family: monospace;
-            font-size: 0.9rem;
-        }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
 
-        .footer {
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: #555;
-        }
-    </style>
+    .btn {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all .2s ease;
+      backdrop-filter: blur(6px);
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #020617;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px var(--glow);
+    }
+
+    .btn.mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: .9rem;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: .78rem;
+      color: #52525b;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <img src="profile.jpg" alt="Adnan Bashir" class="profile-img">
-        
-        <h1>Adnan Bashir</h1>
-        <h2>Ph.D. Candidate | ML Engineer</h2>
-        
-        <p>
-            Data Scientist specializing in unsupervised learning and real-time state segmentation (SEGSTREAM). 
-            Researcher in digital rights and feed distortion detection.
-        </p>
+  <main class="card">
+    <img src="profile.jpg" alt="Adnan Bashir" class="avatar"/>
 
-        <div class="links">
-            <a href="resume.pdf" download="Adnan_Bashir_Resume" class="btn">
-                Download Resume
-            </a>
+    <h1>Adnan Bashir</h1>
+    <h2>PhD Researcher · Machine Learning</h2>
 
-            <a href="mailto:your_email@example.com" class="btn">
-                Contact Info
-            </a>
+    <p>
+      I work on machine learning systems for real-world measurement problems,
+      with a focus on unsupervised learning, traffic analysis, and longitudinal
+      state detection. My research spans network interference measurement,
+      digital rights, and reproducible data pipelines for policy and engineering use.
+    </p>
 
-            <a href="public_key.asc" download class="btn btn-gpg">
-                Download GPG Key
-            </a>
+    <nav class="links">
+      <a href="resume.pdf" class="btn" download>Download Resume</a>
+      <a href="mailto:your_email@example.com" class="btn">Contact</a>
+      <a href="public_key.asc" class="btn mono" download>GPG Public Key</a>
+      <a href="https://github.com/yourusername" target="_blank" class="btn">GitHub</a>
+      <a href="https://scholar.google.com/" target="_blank" class="btn">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/yourname" target="_blank" class="btn">LinkedIn</a>
+    </nav>
 
-            <a href="https://github.com/yourusername" target="_blank" class="btn">
-                GitHub
-            </a>
-        </div>
-
-        <div class="footer">
-            &copy; 2025 Adnan Bashir. All Rights Reserved.
-        </div>
-    </div>
+    <footer>
+      © 2025 Adnan Bashir
+    </footer>
+  </main>
 
 </body>
 </html>
