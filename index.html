@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Profile</title>
+    <title>Adnan Bashir - Profile</title>
     <style>
         :root {
             --bg-color: #121212;
@@ -12,6 +12,8 @@
             --text-muted: #a1a1aa;
             --accent: #3b82f6;
             --accent-hover: #2563eb;
+            --btn-bg: #2d2d2d;
+            --btn-border: #404040;
         }
 
         * {
@@ -31,6 +33,7 @@
             padding: 20px;
         }
 
+        /* Container for the single profile card */
         .container {
             background-color: var(--card-bg);
             border-radius: 20px;
@@ -58,16 +61,16 @@
 
         h1 {
             font-size: 1.8rem;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
         h2 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--accent);
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-weight: 600;
         }
 
@@ -85,21 +88,31 @@
         }
 
         .btn {
-            display: block;
-            padding: 12px;
-            background-color: #2d2d2d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px;
+            background-color: var(--btn-bg);
             color: var(--text-main);
             text-decoration: none;
             border-radius: 10px;
             transition: all 0.2s ease;
             font-weight: 500;
-            border: 1px solid #404040;
+            border: 1px solid var(--btn-border);
+            font-size: 1rem;
         }
 
         .btn:hover {
             background-color: var(--accent);
             border-color: var(--accent);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Specific style for GPG key to differentiate it slightly */
+        .btn-gpg {
+            font-family: monospace;
+            font-size: 0.9rem;
         }
 
         .footer {
@@ -107,31 +120,41 @@
             font-size: 0.8rem;
             color: #555;
         }
-
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+        <img src="profile.jpg" alt="Adnan Bashir" class="profile-img">
         
-        <h1>Your Name</h1>
-        <h2>Professional Title</h2>
+        <h1>Adnan Bashir</h1>
+        <h2>Ph.D. Candidate | ML Engineer</h2>
         
         <p>
-            Brief bio goes here. Describe your expertise, your current focus, 
-            or a welcoming message to visitors. Keep it concise and engaging.
+            Data Scientist specializing in unsupervised learning and real-time state segmentation (SEGSTREAM). 
+            Researcher in digital rights and feed distortion detection.
         </p>
 
         <div class="links">
-            <a href="#" class="btn">View Portfolio</a>
-            <a href="#" class="btn">GitHub</a>
-            <a href="#" class="btn">LinkedIn</a>
-            <a href="mailto:your@email.com" class="btn">Contact Me</a>
+            <a href="resume.pdf" download="Adnan_Bashir_Resume" class="btn">
+                Download Resume
+            </a>
+
+            <a href="mailto:your_email@example.com" class="btn">
+                Contact Info
+            </a>
+
+            <a href="public_key.asc" download class="btn btn-gpg">
+                Download GPG Key
+            </a>
+
+            <a href="https://github.com/yourusername" target="_blank" class="btn">
+                GitHub
+            </a>
         </div>
 
         <div class="footer">
-            &copy; 2025 All Rights Reserved.
+            &copy; 2025 Adnan Bashir. All Rights Reserved.
         </div>
     </div>
 
