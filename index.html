@@ -18,11 +18,7 @@
       --glow: rgba(96, 165, 250, 0.35);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
@@ -38,16 +34,14 @@
     }
 
     .card {
-      max-width: 420px;
+      max-width: 460px;
       width: 100%;
       background: linear-gradient(180deg, #15151f, var(--card));
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 42px 36px;
       text-align: center;
-      box-shadow:
-        0 30px 80px rgba(0,0,0,.7),
-        inset 0 1px 0 rgba(255,255,255,.03);
+      box-shadow: 0 30px 80px rgba(0,0,0,.7);
       animation: fadeIn .6s ease-out;
     }
 
@@ -64,12 +58,6 @@
       border: 3px solid var(--accent);
       box-shadow: 0 0 0 6px rgba(96,165,250,.12);
       margin-bottom: 22px;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .avatar:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 28px var(--glow);
     }
 
     h1 {
@@ -92,13 +80,14 @@
       font-size: .96rem;
       line-height: 1.65;
       color: var(--muted);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .links {
       display: flex;
       flex-direction: column;
       gap: 14px;
+      margin-bottom: 28px;
     }
 
     .btn {
@@ -110,7 +99,6 @@
       text-decoration: none;
       font-weight: 500;
       transition: all .2s ease;
-      backdrop-filter: blur(6px);
     }
 
     .btn:hover {
@@ -126,8 +114,26 @@
       font-size: .9rem;
     }
 
+    .music {
+      margin-top: 18px;
+      text-align: left;
+    }
+
+    .music h3 {
+      font-size: .75rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    iframe {
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
     footer {
-      margin-top: 34px;
+      margin-top: 28px;
       font-size: .78rem;
       color: #52525b;
     }
@@ -154,9 +160,23 @@
       <a href="mailto:your_email@example.com" class="btn">Contact</a>
       <a href="public_key.asc" class="btn mono" download>GPG Public Key</a>
       <a href="https://github.com/yourusername" target="_blank" class="btn">GitHub</a>
-      <a href="https://scholar.google.com/" target="_blank" class="btn">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/yourname" target="_blank" class="btn">LinkedIn</a>
+      <a href="https://soundcloud.com/aadirecords" target="_blank" class="btn">
+        SoundCloud
+      </a>
     </nav>
+
+    <!-- SoundCloud Player -->
+    <section class="music">
+      <h3>Sound</h3>
+      <iframe
+        width="100%"
+        height="120"
+        scrolling="no"
+        frameborder="no"
+        allow="autoplay"
+        src="https://soundcloud.com/aadirecords/2025-12-19_15h19m49?si=1f4366129f35450fa12de675a9c58225&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing">
+      </iframe>
+    </section>
 
     <footer>
       © 2025 Adnan Bashir
